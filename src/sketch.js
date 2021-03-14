@@ -18,7 +18,9 @@ const sketch = (p) => {
 
   p.draw = () => {
     p.background(255);
-    p.fill(30);
+    const RECT_COLOR = 30;
+    const SPEED = 0.2;
+    p.fill(RECT_COLOR);
     p.noStroke();
     const rectX = 250;
     const rectY = 100;
@@ -26,11 +28,32 @@ const sketch = (p) => {
     const rectH = 50;
     p.push();
     p.translate(rectX + rectW / 2, rectY + rectH / 2);
-    p.rotate(Math.sin(p.frameCount / 10) * (Math.PI / 8));
+    p.rotate(Math.sin(p.frameCount * SPEED) * (Math.PI / 8));
     p.rect(-rectW / 2, -rectH / 2, rectW, rectH, 20);
     p.fill(200);
     p.text('O wO', 0, 0);
     // p.text('Download Resume', 0, 0);
+
+    const legLength = 50;
+    const feetLength = 10;
+    p.push();
+    p.strokeWeight(4);
+    p.stroke(RECT_COLOR);
+    p.translate(-rectW / 2, 0);
+    p.rotate(p.frameCount * SPEED);
+    p.line(0, 0, 0, legLength);
+    p.line(0, legLength, feetLength, legLength);
+    p.pop();
+
+    p.push();
+    p.strokeWeight(4);
+    p.stroke(RECT_COLOR);
+    p.translate(rectW / 2, 0);
+    p.rotate(p.frameCount * SPEED + Math.PI);
+    p.line(0, 0, 0, legLength);
+    p.line(0, legLength, feetLength, legLength);
+    p.pop();
+
     p.pop();
   };
 };
