@@ -10,6 +10,8 @@ const useStyles = makeStyles({
     backgroundColor: WHITE,
     paddingLeft: '1rem',
     flex: 1,
+    borderBottom: `5px solid ${DARK_GREY}`,
+    maxHeight: '4rem',
   },
   anchor: {
     margin: '1rem 1rem 1rem 0rem',

@@ -1,5 +1,79 @@
 import React from 'react';
 
-const Portfolio = () => <div>Portfolio</div>;
+import makeStyles from '@material-ui/core/styles/makeStyles';
 
-export default Portfolio;
+import PortfolioCard from './portfolio-card';
+import Header from '../common/header';
+
+import { DARK_GREY, VERY_LIGHT_GREY, WHITE } from '../../colors';
+import content from './content';
+
+const useStyles = makeStyles({
+  wrapper: {
+    display: 'flex',
+    backgroundColor: WHITE,
+    paddingLeft: '1rem',
+    flex: 1,
+    flexDirection: 'column',
+  },
+  headerWrapper: {
+    display: 'flex',
+  },
+  bodyWrapper: {
+    display: 'flex',
+    flex: 1,
+    backgroundColor: VERY_LIGHT_GREY,
+  },
+  leftPane: {
+    width: '10rem',
+    borderRight: `5px solid ${DARK_GREY}`,
+  },
+  rightPane: {
+    display: 'flex',
+    flex: 1,
+  },
+  cardsWrapper: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardWrapper: {
+    margin: '10rem 0rem',
+  },
+});
+
+const PortfolioPage = () => {
+  const classes = useStyles();
+
+  const cardDoms = content.map((project) => (
+    <div className={classes.cardWrapper}>
+      <PortfolioCard
+        title={project.title}
+        imgSrc={project.imgSrc}
+        projectUrl={project.projectUrl}
+        bodyText={project.bodyText}
+      />
+    </div>
+  ));
+
+  return (
+    <div className={classes.wrapper}>
+      <div className={classes.headerWrapper}>
+        <Header />
+      </div>
+      <div className={classes.bodyWrapper}>
+        <div className={classes.leftPane} />
+        <div className={classes.rightPane}>
+          <div className={classes.cardsWrapper}>
+            {cardDoms}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+PortfolioPage.propTypes = {
+};
+
+export default PortfolioPage;
