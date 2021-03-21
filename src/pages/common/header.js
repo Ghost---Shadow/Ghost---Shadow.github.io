@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     display: 'flex',
     backgroundColor: WHITE,
     paddingLeft: '1rem',
+    flex: 1,
   },
   anchor: {
     margin: '1rem 1rem 1rem 0rem',

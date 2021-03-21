@@ -8,7 +8,9 @@ export default {
 };
 
 export const normal = () => (
-  <Landing />
+  <div style={{ width: '1920px', height: '1080px', display: 'flex' }}>
+    <Landing />
+  </div>
 );
 
 normal.story = { name: 'normal' };
