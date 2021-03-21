@@ -73,6 +73,7 @@ const useStyles = makeStyles({
     padding: '1rem',
     backgroundColor: WHITE,
     color: DARK_GREY,
+    overflow: 'auto',
   },
 });
 

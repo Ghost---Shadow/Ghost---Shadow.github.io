@@ -12,7 +12,6 @@ const useStyles = makeStyles({
   wrapper: {
     display: 'flex',
     backgroundColor: WHITE,
-    paddingLeft: '1rem',
     flex: 1,
     flexDirection: 'column',
   },
@@ -31,14 +30,24 @@ const useStyles = makeStyles({
   rightPane: {
     display: 'flex',
     flex: 1,
+    marginRight: '10rem',
   },
   cardsWrapper: {
-    flex: 1,
+    // flex: 1,
     display: 'flex',
     flexDirection: 'column',
   },
   cardWrapper: {
     margin: '10rem 0rem',
+  },
+  footer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '2rem',
+    backgroundColor: WHITE,
+    color: WHITE,
+    borderTop: `5px solid ${DARK_GREY}`,
   },
 });
 
@@ -69,6 +78,7 @@ const PortfolioPage = () => {
           </div>
         </div>
       </div>
+      <div className={classes.footer}>I am a ghost. Boo!</div>
     </div>
   );
 };

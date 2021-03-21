@@ -9,7 +9,7 @@ import Art from '../../assets/art1.png';
 import { VERY_LIGHT_GREY } from '../../colors';
 
 const useStyles = makeStyles({
-  wrapper00: {
+  wrapper: {
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
@@ -49,7 +49,7 @@ const LandingPage = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.wrapper00}>
+    <div className={classes.wrapper}>
       <div className={classes.headerWrapper}>
         <Header />
       </div>

@@ -1,17 +1,30 @@
 import React from 'react';
-import P5Wrapper from 'react-p5-wrapper';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 
-import sketch from './sketch';
+import About from './pages/about';
+import LandingPage from './pages/landing';
+import PortfolioPage from './pages/portfolio';
 
-const defaultWidth = 500;
-const defaultHeight = 500;
-
-function App() {
-  return (
-    <div>
-      <P5Wrapper sketch={sketch} width={defaultWidth} height={defaultHeight} />
+const App = () => (
+  <Router>
+    <div style={{ minHeight: '100vh', display: 'flex' }}>
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/portfolio">
+          <PortfolioPage />
+        </Route>
+        <Route path="/">
+          <LandingPage />
+        </Route>
+      </Switch>
     </div>
-  );
-}
+  </Router>
+);
 
 export default App;
